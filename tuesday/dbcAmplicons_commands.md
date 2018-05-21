@@ -5,7 +5,7 @@ Running the dbcAmplicons pipeline
 
 First login to ganesh, then
 
-	srun -t 1-0 -c 4 -n 1 --mem 10000 --reservation workshop --pty /bin/bash
+	srun -t 1-0 -c 4 -n 1 --mem 8000 --reservation workshop --pty /bin/bash
 
 The goal of today is to process raw Illumina sequence reads to abudance tables for the 16sV1-V3 amplicon set. To do so we first need to  1) have all the software installed and working, and 2) have the Illumina sequence data within our project folder (mca_example). We then need to prepare the input metadata files: barcodes, primers, and samples. Amplicon processing with dbcAmplicons includes the following steps: preprocessing, join, classify and abundances.
 
@@ -41,10 +41,10 @@ Next lets make a metadata directory and transfer our barcode, primer and sample 
 We can pull down the already prepared barcode and primer tables from github
 
 	cd metadata
-	wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2017-September-Microbial-Community-Analysis-Workshop/master/metadata/dbcBarcodeLookupTable.txt
-	wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2017-September-Microbial-Community-Analysis-Workshop/master/metadata/PrimerTable.txt	
+	wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2018-May-Microbial-Community-Analysis-Workshop_UCB/master/metadata/dbcBarcodeLookupTable.txt
+	wget https://raw.githubusercontent.com/ucdavis-bioinformatics-training/2018-May-Microbial-Community-Analysis-Workshop_UCB/master/metadata/PrimerTable.txt
 
-You will also need to transfer the sample sheet you created into the metadata directory 
+You will also need to transfer the sample sheet you created into the metadata directory
 
 Once all the metadata tables are in the metadata folder, lets go back to the main workshop folder
 
@@ -133,7 +133,7 @@ Lets make a new folder for the final output results.
 
 	mkdir Slashpile.results
 
-View the help documentation and generate the results. When you provide dbcAmplicons abundance with a sample sheet it will include any additional metadata (extra columns added to the sample sheet) into the biom file for downstream processing. 
+View the help documentation and generate the results. When you provide dbcAmplicons abundance with a sample sheet it will include any additional metadata (extra columns added to the sample sheet) into the biom file for downstream processing.
 
 	dbcAmplicons abundance -h
 

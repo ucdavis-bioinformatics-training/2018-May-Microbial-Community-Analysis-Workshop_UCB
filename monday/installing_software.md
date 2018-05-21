@@ -147,7 +147,7 @@ If for some reason installation failed you can extract a copy from the workshop 
 
 	cd
 	cd mca_example
-	tar xzvf /share/biocore/workshops/2017_Sept_MCA/software.tar.gz
+	tar xzvf /share/biocore/workshops/2018_May_MCA/software.tar.gz
 
 You still need to set up the same environment variable in your \.bash_profile
 
@@ -157,6 +157,6 @@ You still need to set up the same environment variable in your \.bash_profile
 
 	cd
 	cd mca_example
-	cp -r /share/biocore/workshops/2017_Sept_MCA/Illumina_Reads .
+	cp -r /share/biocore/workshops/2018_May_MCA/Illumina_Reads .
 
 Take a look at the files ... what is inside the Illumina_Reads folder?
