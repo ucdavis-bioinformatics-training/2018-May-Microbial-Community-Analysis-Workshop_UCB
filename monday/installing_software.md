@@ -42,6 +42,9 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 
 	source ~/.bash_profile
 
+if it doesn't exit your can create it with
+  touch ~/.bash_profile
+
 ---
 
 **3\.** Install **FLASH2** into src and link the exectuable into bin
@@ -59,7 +62,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 
 **4\.a** Install apache ant, need for RDP
 
-	wget http://mirrors.ibiblio.org/apache//ant/binaries/apache-ant-1.10.3-bin.tar.gz
+	wget http://mirrors.ibiblio.org/apache/ant/binaries/apache-ant-1.10.3-bin.tar.gz
 	tar xzvf apache-ant-1.10.3-bin.tar.gz
 	ln -s ~/mca_example/src/apache-ant-1.10.3/bin/ant ~/mca_example/bin/.
 
