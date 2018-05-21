@@ -12,7 +12,7 @@ Monday
 * [Installing Software](monday/installing_software)
 
 
-Thursday
+Tuesday
 ----------
 
 * [Intro to Microbial Sequencing](tuesday/Intro2MCSequencing.pdf) (talk)
@@ -20,7 +20,7 @@ Thursday
 * [dbcAmplicons: Data processing](tuesday/dbcAmplicons_commands.md) (hands on)
 * [Host Microbe Systems Biology Core](tuesday/Microbial Analysis Presentation.pdf)
 
-Friday
+Wednesday
 ----------
 
 * [Intro to R](wednesday/Intro2R.md)
