@@ -10,9 +10,9 @@ najoshi@ucdavis.edu
 1. Open a Terminal (usually under Applications/Utilities on a Mac)
 2. Cut and paste this into the terminal:
 
-        ssh [username]#@ganesh.genomecenter.ucdavis.edu
+        ssh [username]@ganesh.genomecenter.ucdavis.edu
 
-   where [username] is replaced with your cource username, ex. class12. Press Enter.
+   where [username] is replaced with your course username, ex. class12. Press Enter.
 
 3. Type in your password. No characters will display when you are typing. Press Enter.
 
@@ -22,7 +22,7 @@ najoshi@ucdavis.edu
 
         scp [username]@ganesh.genomecenter.ucdavis.edu:[full path to file] .
 
-   Replace [username] with your cource username with your username and replace '[full path to file]' with the full path to the file you want to transfer. Note that there is a "." at the end of the command, which is where to put the file, i.e. your current directory. You will have to type in your password.
+   Replace [username] with your course username with your username and replace '[full path to file]' with the full path to the file you want to transfer. Note that there is a "." at the end of the command, which is where to put the file, i.e. your current directory. You will have to type in your password.
 
 
 ### For Windows - Logging In
@@ -46,5 +46,3 @@ OR
 ### For MAC or Windows - Transferring files
 
 Cyberduck - https://cyberduck.io/?l=en
-
-

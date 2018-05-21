@@ -24,10 +24,10 @@ optional
 
 **1\.** First, create a directory for the workshop in your home directory:
 
-    cd 
+    cd
     mkdir mca_example
 
-and two other directors 
+and two other directors
 
 	mkdir mca_example/src
 	mkdir mca_example/bin
@@ -55,7 +55,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 	flash2 -h
 	cd ..
 
----	
+---
 
 **4\.a** Install apache ant, need for RDP
 
@@ -82,7 +82,7 @@ using your favorite text editor, _nano_ is simple, add the line
 	module load java/jdk1.8
 	export RDP_PATH=~/mca_example/src/RDPTools
 
-to a file named ~/\.bash_profile, then source it	
+to a file named ~/\.bash_profile, then source it
 
 	source ~/.bash_profile
 
@@ -99,8 +99,8 @@ using your favorite text editor, _nano_ is simple, add the lines
 
 	module load python-libs/2.7.6-ubuntu
 	source ~/mca_example/src/dbcA_virtualenv/bin/activate
-	
-to a file named ~/\.bash_profile, then source it	
+
+to a file named ~/\.bash_profile, then source it
 
 	source ~/.bash_profile
 
@@ -132,7 +132,7 @@ Now log out, log back in and verify that each application still works. Ex.
 
 	flash2 -h
 
-To verify RDP use 
+To verify RDP use
 
 	java -jar $RDP_PATH/classifier.jar classify
 	dbcAmplicons -h
@@ -155,9 +155,8 @@ You still need to set up the same environment variable in your \.bash_profile
 
 **7\.** Last lets copy the workshop data into our home directory.
 
-	cd 
+	cd
 	cd mca_example
 	cp -r /share/biocore/workshops/2017_Sept_MCA/Illumina_Reads .
 
 Take a look at the files ... what is inside the Illumina_Reads folder?
-
