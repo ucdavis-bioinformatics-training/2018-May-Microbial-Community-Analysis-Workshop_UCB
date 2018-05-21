@@ -43,6 +43,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 	source ~/.bash_profile
 
 if it doesn't exit your can create it with
+
   touch ~/.bash_profile
 
 ---
