@@ -59,9 +59,9 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 
 **4\.a** Install apache ant, need for RDP
 
-	wget http://mirrors.ibiblio.org/apache//ant/binaries/apache-ant-1.10.1-bin.tar.gz
-	tar xzvf apache-ant-1.10.1-bin.tar.gz
-	ln -s ~/mca_example/src/apache-ant-1.10.1/bin/ant ~/mca_example/bin/.
+	wget http://mirrors.ibiblio.org/apache//ant/binaries/apache-ant-1.10.3-bin.tar.gz
+	tar xzvf apache-ant-1.10.3-bin.tar.gz
+	ln -s ~/mca_example/src/apache-ant-1.10.3/bin/ant ~/mca_example/bin/.
 
 **4\.b** Install the **Ribsomal Database Project** (RDP) into src
 
