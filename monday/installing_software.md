@@ -42,10 +42,6 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 
 	source ~/.bash_profile
 
-if it doesn't exit your can create it with
-
-	touch ~/.bash_profile
-
 ---
 
 **3\.** Install **FLASH2** into src and link the exectuable into bin
@@ -120,7 +116,9 @@ to a file named ~/\.bash_profile, then source it
 	dbcAmplicons -h
 	cd ..
 
-(Optional) You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folds (in dbcAmplicions).
+**Optional\.** Test **dbcAmplicons**
+
+You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folder (in dbcAmplicions).
 ---
 
 **Lets Review**
