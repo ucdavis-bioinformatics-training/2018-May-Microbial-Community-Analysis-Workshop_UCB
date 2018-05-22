@@ -119,6 +119,7 @@ to a file named ~/\.bash_profile, then source it
 **Optional\.** Test **dbcAmplicons**
 
 You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folder (in dbcAmplicions).
+
 ---
 
 **Lets Review**
