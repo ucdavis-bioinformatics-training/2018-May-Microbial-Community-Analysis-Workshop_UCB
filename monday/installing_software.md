@@ -158,18 +158,18 @@ If for some reason installation failed you can extract a copy from the workshop 
 
 You still need to set up the same environment variable in your \.bash_profile. These lines should be in your .bash_profile
 
-  export PATH=~/mca_example/bin:$PATH
-  module load java/jdk1.8
-  export RDP_PATH=~/mca_example/src/RDPTools
-  module load python-libs/2.7.6-ubuntu
-  source ~/mca_example/src/dbcA_virtualenv/bin/activate
+  export PATH=~/mca_example/bin:$PATH  
+  module load java/jdk1.8  
+  export RDP_PATH=~/mca_example/src/RDPTools  
+  module load python-libs/2.7.6-ubuntu  
+  source ~/mca_example/src/dbcA_virtualenv/bin/activate  
 
 ---
 
 **7\.** Last lets copy the workshop data into our home directory.
 
-  cd
-  cd mca_example
-  cp -r /share/biocore/workshops/2018_May_MCA/Illumina_Reads .
+  cd  
+  cd mca_example  
+  cp -r /share/biocore/workshops/2018_May_MCA/Illumina_Reads .  
 
 Take a look at the files ... what is inside the Illumina_Reads folder?
