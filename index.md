@@ -25,7 +25,7 @@ Wednesday
 
 * [Intro to R](wednesday/Intro2R.md)
 * [dbcAmplicons: Amplicons](wednesday/dbcAmplicons_Amplicons.pdf) (materials)
-* [MCA Analysis in phyloseq](wedndesday/MCA_Workshop_R/phyloseq.md)
+* [MCA Analysis in phyloseq](wednesday/MCA_Workshop_R/phyloseq.md)
 * [Closing thoughts](wednesday/Closing_Thoughts.pdf)
 
 Evaluation!
