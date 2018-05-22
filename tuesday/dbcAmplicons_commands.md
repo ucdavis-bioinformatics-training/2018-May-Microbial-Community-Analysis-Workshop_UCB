@@ -5,9 +5,9 @@ Running the dbcAmplicons pipeline
 
 First login to ganesh, then
 
-	srun -t 1-0 -c 4 -n 1 --mem 8000 --reservation workshop --pty /bin/bash
+	srun -t 1-0 -c 2 -n 1 --mem 10000 --reservation workshop --pty /bin/bash
 
-The goal of today is to process raw Illumina sequence reads to abudance tables for the 16sV1-V3 amplicon set. To do so we first need to  1) have all the software installed and working, and 2) have the Illumina sequence data within our project folder (mca_example). We then need to prepare the input metadata files: barcodes, primers, and samples. Amplicon processing with dbcAmplicons includes the following steps: preprocessing, join, classify and abundances.
+The goal of today is to process raw Illumina sequence reads to abundance tables for the 16sV1-V3 amplicon set. To do so we first need to  1) have all the software installed and working, and 2) have the Illumina sequence data within our project folder (mca_example). We then need to prepare the input metadata files: barcodes, primers, and samples. Amplicon processing with dbcAmplicons includes the following steps: preprocessing, join, classify and abundances.
 
 ![workflow](Workflow.png)
 
@@ -48,7 +48,7 @@ You will also need to transfer the sample sheet you created into the metadata di
 
 Once all the metadata tables are in the metadata folder, lets go back to the main workshop folder
 
-	cd ..
+	cd ~/mca_example
 
 If all this is correct, we are ready to begin.
 
@@ -89,7 +89,7 @@ Again view the output to make sure it makes sense
 	cat preprocess.log
 	cat Slashpile.intermediate/Identified_Barcodes.txt
 
-Finnally, look at the output in the Slashpile.intermediate folder, how many subfolders are there? What do these coorespond to? What is inside each folder? View a few reads in one of the files.
+Finally, look at the output in the Slashpile.intermediate folder, how many subfolders are there? What do these coorespond to? What is inside each folder? View a few reads in one of the files.
 
 **From now on we will only be performing downstream processing of the 16sV1V3 amplicon set**
 
@@ -99,7 +99,7 @@ View the help documentation and run join
 
 	dbcAmplicons join -h
 
-	dbcAmplicons join -t 4 -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3 -1 Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3_R1.fastq.gz > join-16sV1V3.log
+	dbcAmplicons join -t 2 -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3 -1 Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3_R1.fastq.gz > join-16sV1V3.log
 
 view the log
 
@@ -115,7 +115,7 @@ View the help documentation and run classify
 
 	dbcAmplicons classify -h
 
-	dbcAmplicons classify -p 4 --gene 16srrna -U Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3.extendedFrags.fastq.gz -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3
+	dbcAmplicons classify -p 2 --gene 16srrna -U Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3.extendedFrags.fastq.gz -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3
 
 classify produces a fixrank file, view the first 6 lines of the output file
 
@@ -165,7 +165,7 @@ View the output folder, what do you see?
 
 Transfer the abundances, proportions, tax_info, and biom file to your computer for processing in R. You can view the proportions, abundances, and tax_info files in excel. Take a look at the biom file format, is it readable?
 
-**9\.** Process the remaider of the amplicons. First perform 'join', check the output and then the remainder of the pipeline on the other amplicons: 16sV3V4, ITS1, ITS2, LSU
+**9\.** Process the remainder of the amplicons. First perform 'join', check the output and then the remainder of the pipeline on the other amplicons: 16sV3V4, ITS1, ITS2, LSU
 
 Post joining evaluate the results. --Hint: one of these should be processed differently than the others--
 

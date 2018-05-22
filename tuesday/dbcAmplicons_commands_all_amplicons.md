@@ -3,7 +3,7 @@ Running the dbcAmplicons pipeline
 
 **ALL of this should only be done in an interactive session on the cluster**
 
-srun -t 1-0 -c 4 -n 1 --mem 10000 --reservation workshop --pty /bin/bash
+srun -t 1-0 -c 2 -n 1 --mem 10000 --reservation workshop --pty /bin/bash
 
 **1\.** First lets validate our install and environment
 
@@ -31,7 +31,7 @@ If all this is correct, we are ready to begin.
 
 Once we are sure our input files are ok
 
-**2\.** Lets Preprocess the data 
+**2\.** Lets Preprocess the data
 
 # dbcAmplicons preprocess
 	dbcAmplicons preprocess -h
@@ -51,24 +51,24 @@ Run all reads
 	cat preprocess.log
 	cat Identified_Barcodes.txt
 
-**3\.** Lets merge/join the read pairs 
+**3\.** Lets merge/join the read pairs
 
 # dbcAmplicons Join
 	dbcAmplicons join -h
 
-	dbcAmplicons join -t 4 -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3 -1 Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3_R1.fastq.gz > join-16sV1V3.log
+	dbcAmplicons join -t 2 -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3 -1 Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3_R1.fastq.gz > join-16sV1V3.log
 	cat join-16sV1V3.log
 
-	dbcAmplicons join -t 4 -O Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5 -1 Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5_R1.fastq.gz > join-16sV4V5.log
+	dbcAmplicons join -t 2 -O Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5 -1 Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5_R1.fastq.gz > join-16sV4V5.log
 	cat join-16sV4V5.log
 
-	dbcAmplicons join -t 4 -O Slashpile.intermediate/ITS1/Slashpile-ITS1 -1 Slashpile.intermediate/ITS1/Slashpile-ITS1_R1.fastq.gz  > join-ITS1.log
+	dbcAmplicons join -t 2 -O Slashpile.intermediate/ITS1/Slashpile-ITS1 -1 Slashpile.intermediate/ITS1/Slashpile-ITS1_R1.fastq.gz  > join-ITS1.log
 	cat join-ITS1.log
 
-	dbcAmplicons join -t 4 -O Slashpile.intermediate/ITS2/Slashpile-ITS2 -1 Slashpile.intermediate/ITS2/Slashpile-ITS2_R1.fastq.gz  > join-ITS2.log
+	dbcAmplicons join -t 2 -O Slashpile.intermediate/ITS2/Slashpile-ITS2 -1 Slashpile.intermediate/ITS2/Slashpile-ITS2_R1.fastq.gz  > join-ITS2.log
 	cat join-ITS2.log
 
-	dbcAmplicons join -t 4 -O Slashpile.intermediate/LSU/Slashpile-LSU -1 Slashpile.intermediate/LSU/Slashpile-LSU_R1.fastq.gz > join-LSU.log
+	dbcAmplicons join -t 2 -O Slashpile.intermediate/LSU/Slashpile-LSU -1 Slashpile.intermediate/LSU/Slashpile-LSU_R1.fastq.gz > join-LSU.log
 	cat join-LSU.log
 
 **4\.** Classify the merged reads using RDP
@@ -76,15 +76,15 @@ Run all reads
 # dbcAmplicons classify
 	dbcAmplicons classify -h
 
-	dbcAmplicons classify -p 4 --gene 16srrna -U Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3.extendedFrags.fastq.gz -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3
+	dbcAmplicons classify -p 2 --gene 16srrna -U Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3.extendedFrags.fastq.gz -O Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3
 
-	dbcAmplicons classify -p 4 --gene 16srrna -U Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5.extendedFrags.fastq.gz -O Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5
+	dbcAmplicons classify -p 2 --gene 16srrna -U Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5.extendedFrags.fastq.gz -O Slashpile.intermediate/16sV4V5/Slashpile-16sV4V5
 
-	dbcAmplicons classify -p 4 --gene fungalits_unite -U Slashpile.intermediate/ITS1/Slashpile-ITS1.extendedFrags.fastq.gz -O Slashpile.intermediate/ITS1/Slashpile-ITS1
+	dbcAmplicons classify -p 2 --gene fungalits_unite -U Slashpile.intermediate/ITS1/Slashpile-ITS1.extendedFrags.fastq.gz -O Slashpile.intermediate/ITS1/Slashpile-ITS1
 
-	dbcAmplicons classify -p 4 --gene fungalits_unite -U Slashpile.intermediate/ITS2/Slashpile-ITS2.extendedFrags.fastq.gz -O Slashpile.intermediate/ITS2/Slashpile-ITS2
+	dbcAmplicons classify -p 2 --gene fungalits_unite -U Slashpile.intermediate/ITS2/Slashpile-ITS2.extendedFrags.fastq.gz -O Slashpile.intermediate/ITS2/Slashpile-ITS2
 
-	dbcAmplicons classify -p 4 --gene fungallsu -1 Slashpile.intermediate/LSU/Slashpile-LSU.notCombined_1.fastq.gz -2 Slashpile.intermediate/LSU/Slashpile-LSU.notCombined_2.fastq.gz -O Slashpile.intermediate/LSU/Slashpile-LSU
+	dbcAmplicons classify -p 2 --gene fungallsu -1 Slashpile.intermediate/LSU/Slashpile-LSU.notCombined_1.fastq.gz -2 Slashpile.intermediate/LSU/Slashpile-LSU.notCombined_2.fastq.gz -O Slashpile.intermediate/LSU/Slashpile-LSU
 
 ---
 

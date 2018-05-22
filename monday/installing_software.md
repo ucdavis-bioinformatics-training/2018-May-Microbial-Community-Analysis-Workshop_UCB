@@ -168,7 +168,7 @@ You still need to set up the same environment variable in your \.bash_profile. T
 
 **7\.** Last lets copy the workshop data into our home directory.
 
-	cd
+  cd
 	cd mca_example
 	cp -r /share/biocore/workshops/2018_May_MCA/Illumina_Reads .
 
