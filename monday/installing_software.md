@@ -120,6 +120,10 @@ to a file named ~/\.bash_profile, then source it
 
 You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folder (in dbcAmplicions).
 
+  cd dbcAmplicons/tests/
+  ./test_dbAmplicons.sh
+  cd ../..
+
 ---
 
 **Lets Review**
@@ -135,16 +139,16 @@ Now log out, log back in and verify that each application still works. Ex.
 
 	flash2 -h
 
-To verify RDP use
+To verify RDP and dbcAmplicons use
 
 	java -jar $RDP_PATH/classifier.jar classify
 	dbcAmplicons -h
 
-You can check the current version of everything with, we usually save the output of this in the project file to remind ourselves which versions were run.
+You can check the current version of everything with
 
 	dbcVersionReport.sh
 
-You can test the dbcAmplicons installation buy running the script test_dbAmplicons.sh, in the tests folder.
+We usually save the output of this in the project file to remind ourselves which versions of software were run for that project.
 
 If for some reason installation failed you can extract a copy from the workshop share
 
@@ -152,7 +156,13 @@ If for some reason installation failed you can extract a copy from the workshop 
 	cd mca_example
 	tar xzvf /share/biocore/workshops/2018_May_MCA/software.tar.gz
 
-You still need to set up the same environment variable in your \.bash_profile
+You still need to set up the same environment variable in your \.bash_profile. These lines should be in your .bash_profile
+
+  export PATH=~/mca_example/bin:$PATH
+  module load java/jdk1.8
+  export RDP_PATH=~/mca_example/src/RDPTools
+  module load python-libs/2.7.6-ubuntu
+  source ~/mca_example/src/dbcA_virtualenv/bin/activate
 
 ---
 
