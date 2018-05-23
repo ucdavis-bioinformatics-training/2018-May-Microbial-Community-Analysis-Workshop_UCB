@@ -16,7 +16,7 @@ Monday
 Tuesday
 ----------
 
-* [Running jobs on the Cluster and using modules](tuesday/cluster) (home work)
+* [Running jobs on the Cluster and using modules](tuesday/cluster) (homework)
 * [dbcAmplicons: Amplicons](tuesday/dbcAmplicons_Amplicons.pdf) (materials)
 * [dbcAmplicons: Bioinformatics](tuesday/dbcAmplicons_Bioinformatics.pdf) (materials)
 * [dbcAmplicons: Data processing](tuesday/dbcAmplicons_commands) (hands on)
