@@ -89,7 +89,7 @@ Again view the output to make sure it makes sense
 	cat preprocess.log
 	cat Slashpile.intermediate/Identified_Barcodes.txt
 
-Finally, look at the output in the Slashpile.intermediate folder, how many subfolders are there? What do these coorespond to? What is inside each folder? View a few reads in one of the files.
+Finally, look at the output in the Slashpile.intermediate folder, how many subfolders are there? What do these correspond to? What is inside each folder? View a few reads in one of the files.
 
 **From now on we will only be performing downstream processing of the 16sV1V3 amplicon set**
 
