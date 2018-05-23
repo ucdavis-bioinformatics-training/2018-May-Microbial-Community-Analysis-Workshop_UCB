@@ -33,4 +33,4 @@ Wednesday
 Evaluation!
 ----------
 
-Please help us improve future workshops, for you and others, by filling out an [evaluation]().
+Please help us improve future workshops, for you and others, by filling out an [evaluation](https://docs.google.com/forms/d/e/1FAIpQLScpfh0Xbg2LTvEJL31-f3_iLLsStcvt6QuyEqIQvnGats923w/viewform?usp=sf_link).
