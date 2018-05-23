@@ -20,7 +20,7 @@ Tuesday
 * [dbcAmplicons: Amplicons](tuesday/dbcAmplicons_Amplicons.pdf) (materials)
 * [dbcAmplicons: Bioinformatics](tuesday/dbcAmplicons_Bioinformatics.pdf) (materials)
 * [dbcAmplicons: Data processing](tuesday/dbcAmplicons_commands) (hands on)
-* [dbcAmplicons: Data processing - all amplicons](tuesday/dbcAmplicons_commands_all_amplicons) (home work)
+* [dbcAmplicons: Data processing - all amplicons](tuesday/dbcAmplicons_commands_all_amplicons) (homework)
 
 Wednesday
 ----------
