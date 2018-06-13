@@ -34,11 +34,11 @@ and two other directors
 
 **2\.** Now lets add the new bin directory to our PATH in a \.bash_profile file
 
-using your favorite text editor, _nano_ is simple, add the line
+using your favorite text editor (e.g. using the 'nano' editor, type 'nano ~.bash_profile' to open nano and immediately edit .bash_profile in your home directory) add the line
 
 	export PATH=~/mca_example/bin:$PATH
 
-to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. Then on the command line, so that we don't have to first log out then log back in.
+to a file named \.bash_profile [node the leading \. as its a 'hidden' file], which may or may not already exist in your home. Then save and exit (e.g. using 'nano', type <control-O> to save, then <control-X> to exit). Then on the command line, execute the commands in your .bash_profile file (which normally only get executed when you log in).
 
 	source ~/.bash_profile
 
@@ -46,7 +46,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 
 **3\.** Install **FLASH2** into src and link the exectuable into bin
 
-	cd mca_example/src
+	cd ~/mca_example/src
 	git clone https://github.com/dstreett/FLASH2.git
 	cd FLASH2/
 	make
@@ -59,41 +59,48 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file]. The
 
 **4\.a** Install apache ant, need for RDP
 
+	cd ~/mca_example/src
 	wget http://mirrors.ibiblio.org/apache/ant/binaries/apache-ant-1.10.3-bin.tar.gz
 	tar xzvf apache-ant-1.10.3-bin.tar.gz
 	ln -s ~/mca_example/src/apache-ant-1.10.3/bin/ant ~/mca_example/bin/.
+	cd ..
 
 **4\.b** Install the **Ribsomal Database Project** (RDP) into src
 
+	cd ~/mca_example/src
 	module load java/jdk1.8
 	git clone https://github.com/rdpstaff/RDPTools.git
 	cd RDPTools/
 	git submodule init
 	git submodule update
 	make
+	# might have problems retreiving data.tgz file ... if so, try again
 	# test installation, should see help documentation for classify
 	java -jar classifier.jar classify
+	# this should give you a "Command Error" because you didn\'t specify output
+	# ... but it should give you a list of options
 	cd ..
 
 **4\.c** Add the location of classifier.jar as a variable in our \.bash_profile
 
-using your favorite text editor, _nano_ is simple, add the line
+using your favorite text editor, (nano?), add the line
 
 	module load java/jdk1.8
 	export RDP_PATH=~/mca_example/src/RDPTools
 
-to a file named ~/\.bash_profile, then source it
+to ~/\.bash_profile, then source it
 
-	source ~/.bash_profile
+	source ~/.bash_profile  # runs the commands right away, instead of at next login
 
 ---
 
-**5\.a** Setup a python virtual environment for dbcAmplicons
+**5\.a** Setup a python virtual environment for dbcAmplicons, in the src directory
 
+	cd ~/mca_example/src
 	module load python-libs/2.7.6-ubuntu
 	virtualenv dbcA_virtualenv
 
-**5\.b** now lets set the virtual environment to activate on login by adding it to our \.bash_profile
+**5\.b** This lets you set the virtual environment to activate on login by adding it to our \.bash_profile
 
 using your favorite text editor, _nano_ is simple, add the lines
 
@@ -104,25 +111,27 @@ to a file named ~/\.bash_profile, then source it
 
 	source ~/.bash_profile
 
+You should now see the text "(dbcA_virtualenv)" at the beginning of your prompt.
+
 ---
 
-**6\.** install **dbcAmplicons**
+**6\.** Install **dbcAmplicons**
 
+	cd ~/mca_example/src
 	pip install biom-format
 	git clone https://github.com/msettles/dbcAmplicons.git
 	cd dbcAmplicons/
 	python setup.py install
 	# test installation, should see help documentation
-	dbcAmplicons -h
+	dbcAmplicons -h  # should show options / usage message
 	cd ..
 
 **Optional\.** Test **dbcAmplicons**
 
 You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folder (in dbcAmplicions).
 
-  cd dbcAmplicons/tests/
-  ./test_dbAmplicons.sh
-  cd ../..
+  cd ~/mca_example/src/dbcAmplicons/tests/
+  ./test_dbAmplicons.sh  # could show some ERRORs / WARNINGs, but otherwise give stats after a few minutes
 
 ---
 
