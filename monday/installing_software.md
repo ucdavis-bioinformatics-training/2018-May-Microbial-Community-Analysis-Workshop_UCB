@@ -74,11 +74,13 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file], whi
 	git submodule init
 	git submodule update
 	make
-	# might have problems retreiving data.tgz file ... if so, try again
+	# might have problems retreiving data.tgz file ... if so, try again ...
+	# during 9-5 EST(!) ... 
 	# test installation, should see help documentation for classify
 	java -jar classifier.jar classify
 	# this should give you a "Command Error" because you didn\'t specify output
 	# ... but it should give you a list of options
+	# feel free to move on if the 'make' fails due to data.tgz file
 	cd ..
 
 **4\.c** Add the location of classifier.jar as a variable in our \.bash_profile
